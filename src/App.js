@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import siteLogo from './assets/logo.png';
+import Routing from "./components/Routing";
+import PropTypes from 'prop-types';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'wrapper'}>
+      <Header logoImage={siteLogo} />
+      <main>
+          <Routing />
+      </main>
+      <Footer />
     </div>
   );
+}
+
+Header.propTypes = {
+    logoImage: PropTypes.string
 }
 
 export default App;
